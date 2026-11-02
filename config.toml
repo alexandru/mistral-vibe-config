@@ -1,0 +1,41 @@
+default_agent = "Orchestrator"
+disabled_agents = ["ask", "accept-edits", "smart-approve", "auto-approve", "explore", "lean"]
+enable_auto_approve = false
+active_model = "mistral-medium-3.5"
+enable_subagents = true
+bypass_tool_permissions = false
+
+[[models]]
+alias = "junior"
+name = "mistral-vibe-cli-latest"
+provider = "mistral"
+temperature = 1.0
+thinking = "off"
+supports_images = true
+max_context_length = 262144
+
+[tools.edit]
+permission = "always"
+denylist = ["**/.agents/skills", "**/.agents/skills/**"]
+
+[tools.write_file]
+permission = "always"
+denylist = ["**/.agents/skills", "**/.agents/skills/**"]
+
+[tools.read_file]
+permission = "always"
+
+[tools.grep]
+permission = "always"
+
+[tools.skill]
+permission = "always"
+
+[tools.web_fetch]
+permission = "always"
+
+[tools.web_search]
+permission = "always"
+
+[tools.bash]
+permission = "always"

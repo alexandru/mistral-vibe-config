@@ -1,0 +1,26 @@
+# Vibe runtime state and machine-specific configuration — never source configuration.
+/.env
+/cache.toml
+/connector_bootstrap_cache.json
+/experiment_eval_cache.json
+/local_projects.toml
+/logs/
+/managed_config_cache.json
+/model_catalog_cache.json
+/projects.toml
+/skills/
+/skills-registry-cache/
+/skills.toml
+/trusted_folders.toml
+/utility_model_cache.json
+/vibehistory
+/whoami_cache.json
+/worktrees/
+
+# Local tooling.
+node_modules/
+package-lock.json
+*.log
+.mypy_cache
+.ruff_cache
+__pycache__
