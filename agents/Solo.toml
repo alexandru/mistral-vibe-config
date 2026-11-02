@@ -1,7 +1,7 @@
 agent_type = "agent"
 display_name = "Solo"
 description = "Use for implementation requiring judgment and direct tool use: diagnosis, design, architecture, trade-offs, code review, substantive changes, and integration. Reasoning/cost: max."
-enabled_agents = ["Solo", "Solo-delegate"]
+enabled_agents = ["Solo", "Solo-delegate", "ask", "accept-edits", "smart-approve", "auto-approve", "lean"]
 
 instructions = '''
 Vibe names this delegated independent role `Solo-delegate`.
@@ -45,6 +45,19 @@ What follows is your contract, using keywords from RFC 2119 (MUST, MUST NOT, SHO
 - SHOULD document design invariants, but only when clear and not visible in code signatures.
 '''
 
-[tools.task]
-permission = "never"
-allowlist = ["Solo-delegate"]
+[tools.edit]
+permission = "always"
+[tools.write_file]
+permission = "always"
+[tools.read_file]
+permission = "always"
+[tools.grep]
+permission = "always"
+[tools.skill]
+permission = "always"
+[tools.web_fetch]
+permission = "always"
+[tools.web_search]
+permission = "always"
+[tools.bash]
+permission = "always"

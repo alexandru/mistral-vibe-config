@@ -1,7 +1,7 @@
 agent_type = "agent"
 display_name = "Orchestrator"
 description = "Use for work requiring judgment: diagnosis, design, architecture, trade-offs, code review, substantive changes, integration, and parallel workstreams. Reasoning/cost: max."
-enabled_agents = ["Orchestrator", "Orchestrator-delegate", "Junior"]
+enabled_agents = ["Orchestrator", "Orchestrator-delegate", "Junior", "ask", "accept-edits", "smart-approve", "auto-approve", "lean"]
 
 instructions = '''
 The delegated judgment peer named Orchestrator below is `Orchestrator-delegate` in Vibe; evidence and execution work goes to `Junior`.
@@ -122,6 +122,19 @@ Rules:
 - SHOULD document design invariants, but only when clear and not visible in code signatures.
 '''
 
-[tools.task]
-permission = "never"
-allowlist = ["Orchestrator-delegate", "Junior"]
+[tools.edit]
+permission = "always"
+[tools.write_file]
+permission = "always"
+[tools.read_file]
+permission = "always"
+[tools.grep]
+permission = "always"
+[tools.skill]
+permission = "always"
+[tools.web_fetch]
+permission = "always"
+[tools.web_search]
+permission = "always"
+[tools.bash]
+permission = "always"
